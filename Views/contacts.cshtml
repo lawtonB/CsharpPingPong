@@ -1,9 +1,14 @@
 <h1>Contact List</h1>
-<ol>
-  @foreach (var Contact in @Model["Contacts"])
+@if (@Model.Count == 0)
+{
+  <h2> no contacts added yet</h2>
+}
+  @foreach (var contact in @Model)
   {
     <li>@Contact.GetName()</li>
     <li>@Contact.GetAddress()</li>
     <li>@Contact.GetPhoneNumber()</li>
-
   }
+<p><a href="contacts/new">add a new contact</a></p>
+<p><a href="contacts/cleared">delete all contacts</a></p>
+<p><a href="/">Homepage</a></p>
