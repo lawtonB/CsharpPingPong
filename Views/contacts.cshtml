@@ -5,9 +5,9 @@
 }
   @foreach (var contact in @Model)
   {
-    <li>@Contact.GetName()</li>
-    <li>@Contact.GetAddress()</li>
-    <li>@Contact.GetPhoneNumber()</li>
+    <li>@contact.GetName()</li>
+    <li>@contact.GetAddress()</li>
+    <li>@contact.GetPhoneNumber()</li>
   }
 <p><a href="contacts/new">add a new contact</a></p>
 <p><a href="contacts/cleared">delete all contacts</a></p>

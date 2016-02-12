@@ -12,18 +12,25 @@ namespace Address
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
+
       Get["/contacts"] = _ => {
         List<Contact> allContacts = Contact.GetAll();
         return View["contacts.cshtml", allContacts];
       };
+
       Get["/contacts/new"] = _ => {
         return View["contact_form.cshtml"];
       };
-      Post["/contact_added"] = _ => {
+
+      Post["contacts/added"] = _ => {
         int intPhoneNumber = int.Parse(Request.Form["new-phoneNumber"]);
-        var newContact = new Contact(Request.Form["new-name"], Request.Form["new-address"],intPhoneNumber);
-        var allContacts = Contact.GetAll();
-        return View["contact_created.cshtml"];
+        Contact newContact = new Contact((Request.Form["new-name"]), (Request.Form["new-address"]),intPhoneNumber);
+        return View["contact_created.cshtml", newContact];
+      };
+
+      Get["contacts/cleared"] = _ => {
+        Contact.ClearAll();
+        return View["contacts_cleared.cshtml"];
       };
     }
   }
