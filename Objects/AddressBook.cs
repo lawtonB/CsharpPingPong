@@ -1,17 +1,17 @@
-using System
+using System;
 using System.Collections.Generic;
 
 namespace Address.Objects
 {
-  public class AddressBook
+  public class Contact
   {
     private string _Name;
     private string _Address;
     private int _PhoneNumber;
     private int _Id;
-    private List<AddressBook> _instances = new List<AddressBook> {};
+    private List<Contact> _instances = new List<Contact> {};
 
-    public AddressBook(string Name, string Address, int PhoneNumber)
+    public Contact(string Name, string Address, int PhoneNumber)
     {
     _Name = Name;
     _Address = Address;
@@ -43,7 +43,7 @@ namespace Address.Objects
     {
       _PhoneNumber = PhoneNumber;
     }
-    public static List<AddressBook> GetAll()
+    public static List<Contact> GetAll()
     {
       return _instances;
     }
@@ -55,7 +55,7 @@ namespace Address.Objects
     {
       _instances.Clear();
     }
-    public static AddressBook Find(int searchId)
+    public static Contact Find(int searchId)
     {
       return _instances[searchId-1];
     }

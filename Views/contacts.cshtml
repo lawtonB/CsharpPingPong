@@ -1,0 +1,9 @@
+<h1>Contact List</h1>
+<ol>
+  @foreach (var Contact in @Model["Contacts"])
+  {
+    <li>@Contact.GetName()</li>
+    <li>@Contact.GetAddress()</li>
+    <li>@Contact.GetPhoneNumber()</li>
+
+  }

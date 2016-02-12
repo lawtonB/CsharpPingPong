@@ -1,8 +1,9 @@
+using System;
 using Nancy;
 using System.Collections.Generic;
-using Todo.Objects;
+using Address.Objects;
 
-namespace ToDoList
+namespace Address
 {
   public class HomeModule : NancyModule
   {
@@ -11,17 +12,18 @@ namespace ToDoList
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
-      Get["/categories"] = _ => {
-        var allCategories = Category.GetAll();
-        return View["categories.cshtml", allCategories];
+      Get["/contacts"] = _ => {
+        var allContacts = Contact.GetAll();
+        return View["contacts.cshtml", allContacts];
       };
-      Get["/categories/new"] = _ => {
-        return View["category_form.cshtml"];
+      Get["/contacts/new"] = _ => {
+        return View["contact_form.cshtml"];
       };
-      Post["/categories"] = _ => {
-        var newCategory = new Category(Request.Form["category-name"]);
-        var allCategories = Category.GetAll();
-        return View["categories.cshtml", allCategories];
+      Post["/contact_added"] = _ => {
+        int intPhoneNumber = int.Parse(Request.Form["new-phoneNumber"])
+        var newContact = new Contact(Request.Form["new-name"], Request.Form["new-address"],intPhoneNumber);
+        var allContacts = Contact.GetAll();
+        return View["contact_created.cshtml"];
       };
       Get["/categories/{id}"] = parameters => {
         Dictionary<string, object> model = new Dictionary<string, object>();
