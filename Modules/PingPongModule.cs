@@ -1,6 +1,7 @@
 using Nancy;
 using System.Collections.Generic;
 using PingPong;
+using System;
 
 namespace PingPongModule
 {
@@ -16,8 +17,10 @@ namespace PingPongModule
     Post["/printout"] = _ =>
     {
       var input = Request.Form["inputNumber"];
-      PingPonger pingObject = new PingPonger(input);
-      return View["printout.cshtml", pingObject];
+      PingPongClass pingObject = new PingPongClass();
+      pingObject.PingPonger(input);
+      List<string> newString = pingObject.getOutput();
+      return View["printout.cshtml", newString];
     };
    }
   }
