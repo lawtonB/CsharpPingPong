@@ -4,7 +4,7 @@ namespace PingPong
 {
   public class PingPongClass
   {
-    public object PingPonger(int input)
+    public string PingPonger(int input)
     {
 
         if (input % 15 == 0)
@@ -21,7 +21,7 @@ namespace PingPong
         }
         else
         {
-          return input;
+          return input.ToString();
         }
     }
   }

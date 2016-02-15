@@ -26,7 +26,7 @@ namespace PingPongTest
     public void IsPingPong_ForNumberDivisibleBy4_4()
     {
       PingPongClass testPingPongTest = new PingPongClass();
-      Assert.Equal(4, testPingPongTest.PingPonger(4));
+      Assert.Equal("4", testPingPongTest.PingPonger(4));
     }
   }
 }
