@@ -16,15 +16,15 @@ namespace PingPong
       for(int i = 1; i <= input; i++)
       {
 
-        if (input % 15 == 0)
+        if (i % 15 == 0)
         {
           _output.Add("ping-pong");
         }
-        else if (input % 5 == 0)
+        else if (i % 5 == 0)
         {
           _output.Add("pong");
         }
-        else if (input % 3 == 0)
+        else if (i % 3 == 0)
         {
           _output.Add("ping");
         }
