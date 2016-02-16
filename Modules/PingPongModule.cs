@@ -17,8 +17,8 @@ namespace PingPongModule
     Post["/printout"] = _ =>
     {
       var input = Request.Form["inputNumber"];
-      PingPongClass pingObject = new PingPongClass();
-      pingObject.PingPonger(input);
+      PingPongClass pingObject = new PingPongClass(input);
+      // pingObject.PingPonger(input);
       List<string> newString = pingObject.getOutput();
       return View["printout.cshtml", newString];
     };

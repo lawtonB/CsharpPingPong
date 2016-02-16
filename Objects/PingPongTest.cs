@@ -13,7 +13,7 @@ namespace PingPongTest
     //arrange
     int userint = 3;
     PingPongClass example = new PingPongClass(userint);
-    List<string> userlist = PingPongClass.getOutput();
+    List<string> userlist = example.getOutput();
 
     //act
     List<string> testlist = new List<string>{"1","2","ping"};

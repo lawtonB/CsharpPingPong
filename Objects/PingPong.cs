@@ -6,16 +6,15 @@ namespace PingPong
 {
   public class PingPongClass
   {
-    private List<string> _output = new List<string> {};
     private int _input;
+    private List<string> _output = new List<string> {};
 
-    public void PingPonger(int input)
+    public PingPongClass(int input)
     {
       _input = input;
 
       for(int i = 1; i <= input; i++)
       {
-
         if (i % 15 == 0)
         {
           _output.Add("ping-pong");
@@ -38,6 +37,5 @@ namespace PingPong
     {
       return _output;
     }
-
   }
 }
